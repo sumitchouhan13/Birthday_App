@@ -26,8 +26,20 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  min-height: 100vh; /* Changed from height to min-height */
+  width: 100vw;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: relative;
+}
+
+/* Add this to handle iOS specifically */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS-specific fixes */
+    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+  }
 }
 
 h1 {

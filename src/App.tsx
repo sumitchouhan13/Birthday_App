@@ -5,6 +5,17 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [showSplashScreen, setShowSplashScreen] = useState<boolean>(true);
+  const [showConfetti, setShowConfetti] = useState(true);
+
+  useEffect(() => {
+    if (!showSplashScreen) {
+      const timer = setTimeout(() => {
+        setShowConfetti(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showSplashScreen]);
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowSplashScreen(false);
@@ -19,8 +30,10 @@ function App() {
         <SplashScreen />
       ) : (
         <>
-          <ReactConfetti />
-          <BubblyText />
+          {showConfetti && <ReactConfetti />}
+          <div>
+            <BubblyText />
+          </div>
         </>
       )}
     </>

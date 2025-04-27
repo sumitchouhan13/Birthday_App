@@ -3,11 +3,7 @@ import "./BubbleText.css";
 const BubblyText = () => {
   return (
     <div className="bubbly-wrapper">
-      <h1 className="bubbly-text">
-        Happy
-        <br />
-        Birthday
-      </h1>
+      <p className="bubbly-text">Happy Birthday</p>
     </div>
   );
 };

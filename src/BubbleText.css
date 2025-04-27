@@ -1,21 +1,42 @@
 /* styles.css */
 .bubbly-wrapper {
   text-align: center;
-  padding: 50px;
+  padding: clamp(20px, 5vw, 50px); /* Responsive padding */
 }
 
 .bubbly-text {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 72px;
-  font-weight: bold;
-  color: #f84545;
+  font-family: "Baloo 2", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor: default;
+  font-weight: 800;
+  color: #f84545; /* Fallback color */
   background: linear-gradient(145deg, #f84545, #ffa500);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-size: clamp(2rem, 8vw, 4.5rem);
 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0, 0, 0, 0.15),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.8);
-
-  letter-spacing: 4px;
+  /* Responsive text shadows */
+  text-shadow: clamp(1px, 0.3vw, 2px) clamp(1px, 0.3vw, 2px)
+      clamp(2px, 0.6vw, 4px) rgba(0, 0, 0, 0.2),
+    clamp(2px, 0.6vw, 4px) clamp(2px, 0.6vw, 4px) clamp(4px, 1.2vw, 8px)
+      rgba(0, 0, 0, 0.15),
+    inset clamp(0.5px, 0.15vw, 1px) clamp(0.5px, 0.15vw, 1px)
+      clamp(1px, 0.3vw, 2px) rgba(255, 255, 255, 0.8);
+  letter-spacing: clamp(2px, 1vw, 4px);
   line-height: 1.2;
+  margin: 0;
+  display: inline-block;
+}
+
+@media (max-width: 400px) {
+  .bubbly-text {
+    line-height: 1.1;
+    letter-spacing: 2px;
+  }
 }
