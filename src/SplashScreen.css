@@ -1,0 +1,27 @@
+.splash-container {
+  background: linear-gradient(135deg, #fef6e4, #fde2ff);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.splash-image {
+  width: 80vw;
+  max-width: 500px;
+  height: auto;
+  animation: growIn 2.5s ease-out forwards;
+}
+
+@keyframes growIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
