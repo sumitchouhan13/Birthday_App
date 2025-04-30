@@ -1,0 +1,19 @@
+/* ResponsiveFlipCountdown.css */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-container {
+    padding: 5px;
+  }
+}

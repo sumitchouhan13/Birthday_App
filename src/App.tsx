@@ -2,10 +2,18 @@ import ReactConfetti from "react-confetti";
 import BubblyText from "./BubbleText";
 import SplashScreen from "./SplashScreen";
 import { useEffect, useState } from "react";
+import PictureComponent from "./PictureComponent";
+import FlipCountdown from "./FlipCountdownApp";
 
 function App() {
   const [showSplashScreen, setShowSplashScreen] = useState<boolean>(true);
   const [showConfetti, setShowConfetti] = useState(true);
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  let targetDate = new Date(currentYear, 6, 12);
+  if (now > targetDate) {
+    targetDate = new Date(currentYear + 1, 6, 12);
+  }
 
   useEffect(() => {
     if (!showSplashScreen) {
@@ -30,9 +38,17 @@ function App() {
         <SplashScreen />
       ) : (
         <>
-          {showConfetti && <ReactConfetti />}
-          <div>
+          {/* {showConfetti && <ReactConfetti />} */}
+          <ReactConfetti />
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
             <BubblyText />
+            <PictureComponent
+              src="https://drive.google.com/uc?export=view&id=1NkI56oclgOtKo6zaFQXx_W3yM5CutcVt"
+              alt=""
+            />
+            <FlipCountdown targetDate={targetDate} />
           </div>
         </>
       )}
