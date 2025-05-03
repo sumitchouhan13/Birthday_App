@@ -7,7 +7,7 @@ import FlipCountdown from "./FlipCountdownApp";
 
 function App() {
   const [showSplashScreen, setShowSplashScreen] = useState<boolean>(true);
-  const [showConfetti, setShowConfetti] = useState(true);
+  // const [showConfetti, setShowConfetti] = useState(true);
   const now = new Date();
   const currentYear = now.getFullYear();
   let targetDate = new Date(currentYear, 6, 12);
@@ -15,15 +15,15 @@ function App() {
     targetDate = new Date(currentYear + 1, 6, 12);
   }
 
-  useEffect(() => {
-    if (!showSplashScreen) {
-      const timer = setTimeout(() => {
-        setShowConfetti(false);
-      }, 5000);
+  // useEffect(() => {
+  //   if (!showSplashScreen) {
+  //     const timer = setTimeout(() => {
+  //       setShowConfetti(false);
+  //     }, 5000);
 
-      return () => clearTimeout(timer);
-    }
-  }, [showSplashScreen]);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [showSplashScreen]);
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowSplashScreen(false);
@@ -45,8 +45,8 @@ function App() {
           >
             <BubblyText />
             <PictureComponent
-              src="https://drive.google.com/uc?export=view&id=1NkI56oclgOtKo6zaFQXx_W3yM5CutcVt"
-              alt=""
+              src="https://drive.google.com/thumbnail?id=1NkI56oclgOtKo6zaFQXx_W3yM5CutcVt&sz=w1000"
+              alt="birthday_image"
             />
             <FlipCountdown targetDate={targetDate} />
           </div>

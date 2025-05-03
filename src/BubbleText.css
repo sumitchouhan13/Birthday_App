@@ -44,3 +44,30 @@
     letter-spacing: 2px;
   }
 }
+
+/* Add these styles to your existing CSS */
+/* Add to your existing CSS */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #f84545;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.bubbly-text.small {
+  min-height: 1.2em; /* Prevent layout shift */
+  display: inline-block; /* Keep cursor aligned */
+}
