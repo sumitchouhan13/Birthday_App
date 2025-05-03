@@ -2,6 +2,7 @@
   "name": "birthday-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://sumitchouhan13.github.io/birthday-app/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +12,6 @@
     "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
-  "homepage": "https://sumitchouhan13.github.io/Birthday_App/",
   "dependencies": {
     "@leenguyen/react-flip-clock-countdown": "^1.6.1",
     "react": "^19.0.0",
