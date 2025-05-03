@@ -9,6 +9,7 @@ const PictureComponent = ({ src, alt }: { src: string; alt: string }) => {
         alt={alt || "Framed Picture"}
         loading="lazy"
         decoding="async"
+        referrerPolicy="no-referrer"
       />
     </div>
   );
