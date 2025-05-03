@@ -47,6 +47,17 @@
 
 /* Add these styles to your existing CSS */
 /* Add to your existing CSS */
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .cursor {
   display: inline-block;
   width: 2px;
